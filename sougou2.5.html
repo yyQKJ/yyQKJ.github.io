@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .clearfix::after {
+        content: "";
+        width: 0;
+        height: 0;
+        font-size: 0;
+        display: block;
+        clear: both;
+    }
+    
+    body {
+        margin: 0;
+    }
+    
+    .top {
+        width: 1000px;
+        margin: 10px auto;
+        position: relative;
+    }
+    
+    .top .logo {
+        width: 193px;
+        height: 40px;
+        float: left;
+    }
+    
+    .top .search {
+        width: 345px;
+        height: 32px;
+        float: right;
+    }
+    
+    .top .search #key {
+        width: 290px;
+        height: 26px;
+        outline: none;
+        border: 1px solid #eee;
+        text-indent: 10px;
+        float: left;
+    }
+    
+    .top .search #key:focus {
+        border: 1px solid #FC6B2D;
+    }
+    
+    .top .search #btn {
+        float: left;
+        width: 30px;
+        height: 30px;
+        text-indent: -9999em;
+        border: none;
+        outline: none;
+        background: url("http://dl.pinyin.sogou.com/index/header/search_box.png");
+        background-position: -293px 0;
+        margin-left: -2px;
+    }
+    
+    .menuCon {
+        width: 100%;
+        height: 40px;
+        background-color: #FC6B2D;
+    }
+    
+    .menu {
+        width: 1000px;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    .menu li {
+        list-style-type: none;
+    }
+    
+    .menu li {
+        float: left;
+        padding: 11px 20px;
+        margin: 0 20px 0 0;
+        position: relative;
+    }
+    
+    .menu li.new::after {
+        content: "";
+        width: 26px;
+        height: 14px;
+        background: url('http://dl.pinyin.sogou.com/index/2.0/new.png');
+        position: absolute;
+        top: -16px;
+        right: 0px;
+    }
+    
+    .menu li.act,
+    .menu li:hover {
+        background-color: #FF222D;
+    }
+    
+    .menu li a {
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .banner {
+        height: 400px;
+        background: url('http://dl.pinyin.sogou.com/index/2.0/banner_8.0.2.jpg') center;
+    }
+    
+    .banner .btn {
+        width: 241px;
+        height: 60px;
+        display: inline-block;
+        background: url('http://dl.pinyin.sogou.com/index/2.0/btn_down_one_8.0.1.png') left top;
+        position: absolute;
+        right: 140px;
+        top: 300px;
+    }
+      #skintitle{
+        width:734px;
+        height:29px;
+        background:url("http://dl.pinyin.sogou.com/index/2.0/side_title.png");
+      }
+      #skinlist{
+        width: 800px;
+        height: 500px;
+      }
+      #skinlist ul li{
+        margin-top: 10px;
+       list-style-type: none; 
+       width: 333px;
+       height: 157px;
+       float: left;
+       margin: 0 34px 13px 0;
+       background: url(http://dl.pinyin.sogou.com/index/2.0/skin_border.png) no-repeat;
+      }
+      #skinlist ul li a{
+        margin-top: 10px;
+        text-decoration: none;
+        color: #696969;
+      }
+      .extend div.title{
+        width: 699px;
+        height: 29px;
+        background: url(" http://dl.pinyin.sogou.com/index/2.0/ex_func_title.png") no-repeat;
+      } 
+      .extend ul li{
+        float: left;
+        margin-right:25px;
+        list-style-type:none; 
+      }
+      .extend li img{
+        padding: 0px;
+        border: none;
+        box-shadow:none;
+      }
+      .extend li .info a.download{
+          display: inline-block;
+          width: 76px;
+          height: 23px;
+          background: url("http://dl.pinyin.sogou.com/index/2.0/down_ex_func.png");
+          margin:-3px 6px 0 0;
+      }
+      .extend li .info a.download:hover{
+        background-position: 0 -23px;
+      }
+      .extend li:nth-child(2) .info a.download{
+        background-position: -76px 0;
+      }
+      .extend li:nth-child(2) .info a.download:hover{
+        background-position: -76px -23px;
+      }
+      .extend li:nth-child(3) .info a.download{
+        background-position: -152px 0;
+      }
+      .extend li:nth-child(3) .info a.download:hover{
+        background-position: -152px -23px;
+      }
+      .extend li:nth-child(4) .info a.download{
+        background-position: -228px 0;
+      }
+      .extend li:nth-child(5) .info a.download{
+        background-position: -304px 0;
+      }
+      .extend li:nth-child(6) .info a.download{
+        background-position: -380px 0;
+      }
+      .ciku div.title{
+         width: 699px;
+        height: 29px;
+        background: url("http://dl.pinyin.sogou.com/index/2.0/dict_show_title.png") no-repeat;
+      }
+      .ciku ul li {
+        float: left;
+        margin-right:25px;
+        list-style-type:none;
+      }
+      .ciku li img{
+        padding:0;
+        border: none;
+        box-shadow:none;
+      }
+      .cuku li .span{
+        text-align: center;
+        margin-top: -10px;
+      }
+     .sidebar {
+        width: 300px;
+        min-height: 600px;
+        float: right;
+        margin-right:240px;
+    }
+    .sidebar .activity h2.title {
+        margin: 0;
+        width: 266px;
+        height: 29px;
+        background-image: url(http://dl.pinyin.sogou.com/index/2.0/new_activity.png);
+    }
+    
+    .sidebar .activity ul li {
+        list-style-type: none;
+        padding: 16px 0 0 16px;
+        width: 266px;
+        height: 33px;
+        background: url(http://dl.pinyin.sogou.com/index/2.0/activity_bg.png) no-repeat;
+        background-position: 0 12px;
+    }
+    
+    .sidebar .activity li a {
+        text-decoration: none;
+        color: #666;
+    }
+    
+    </style>
+</head>
+
+<body>
+    <div class="top clearfix">
+        <div class="logo">
+            <a href="http://pinyin.sogou.com/">
+                <img src="http://dl.pinyin.sogou.com/index/header/logo.png" alt="">
+            </a>
+        </div>
+        <div class="search  clearfix">
+            <input type="text" name="key" id="key">
+            <input type="submit" id="btn" value="搜索">
+        </div>
+    </div>
+    <div class="menuCon">
+        <ul class="menu clearfix">
+            <li class="act">
+                <a href="">首页</a>
+            </li>
+            <li>
+                <a href="">皮肤</a>
+            </li>
+            <li>
+                <a href="">词库</a>
+            </li>
+            <li class="new">
+                <a href="">子媒体</a>
+            </li>
+            <li>
+                <a href="">帮助</a>
+            </li>
+            <li>
+                <a href="">升级日志</a>
+            </li>
+            <li>
+                <a href="">论坛</a>
+            </li>
+        </ul>
+    </div>
+    <div class="banner">
+        <div class="top">
+            <a class="btn" href="#"></a>
+        </div>
+    </div>
+    <div class="yy">
+      <div class="sidebar">
+          <div class="siknyy">
+            <a href="http://pinyin.sogou.com/skins/ac/?f=index">
+              <img src="http://dl.pinyin.sogou.com/index/2.0/index_sidebanner_author_center.jpg" alt="">
+            </a>
+          </div>
+          <div class="activity">
+                <h2 class="title"></h2>
+                <ul>
+                    <li class="important"><a href="#">搜狗输入法Linux版全新发布！</a></li>
+                    <li><a href="#">搜狗输入法Linux版全新发布！</a></li>
+                    <li class="important"><a href="#">搜狗输入法Linux版全新发布！</a></li>
+                    <li><a href="#">搜狗输入法Linux版全新发布！</a></li>
+                </ul>
+            </div>
+        </div>
+  <div id="skintitle"></div>
+  <div id="skinlist" class="clearfix">
+    <ul>
+      <li id="skin_1">
+        <div class="img">
+          <img src="http://dl.pinyin.sogou.com/cache/skins/uploadImage/2016/05/20/14637333491272_former.jpg" alt="">
+          <span><a href="http://pinyin.sogou.com/skins/detail/view/info/524884?rf=pyindex_pic_1">【欣欣】清凉夏日·泥猴桃</a></span>
+        </div>
+      </li>
+         <li id="skin_1">
+        <div class="img">
+          <img src="http://dl.pinyin.sogou.com/cache/skins/uploadImage/2016/05/20/14637333491272_former.jpg" alt="">
+          <a href="http://pinyin.sogou.com/skins/detail/view/info/524884?rf=pyindex_pic_1">【欣欣】清凉夏日·泥猴桃</a>
+        </div>   
+      </li>
+         <li id="skin_1">
+        <div class="img">
+          <img src="http://dl.pinyin.sogou.com/cache/skins/uploadImage/2016/05/20/14637333491272_former.jpg" alt="">
+          <a href="http://pinyin.sogou.com/skins/detail/view/info/524884?rf=pyindex_pic_1">【欣欣】清凉夏日·泥猴桃</a>
+        </div>
+      </li>
+         <li id="skin_1">
+        <div class="img">
+          <img src="http://dl.pinyin.sogou.com/cache/skins/uploadImage/2016/05/20/14637333491272_former.jpg" alt="">
+          <a href="http://pinyin.sogou.com/skins/detail/view/info/524884?rf=pyindex_pic_1">【欣欣】清凉夏日·泥猴桃</a>
+        </div>
+      </li>
+         <li id="skin_1">
+        <div class="img">
+          <img src="http://dl.pinyin.sogou.com/cache/skins/uploadImage/2016/05/20/14637333491272_former.jpg" alt="">
+          <a href="http://pinyin.sogou.com/skins/detail/view/info/524884?rf=pyindex_pic_1">【欣欣】清凉夏日·泥猴桃</a>
+        </div>
+      </li>
+         <li id="skin_1">
+        <div class="img">
+          <img src="http://dl.pinyin.sogou.com/cache/skins/uploadImage/2016/05/20/14637333491272_former.jpg" alt="">
+          <a href="http://pinyin.sogou.com/skins/detail/view/info/524884?rf=pyindex_pic_1">【欣欣】清凉夏日·泥猴桃</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+       <div class="extend">
+          <div class="title"></div>
+          <ul class="clearfix">
+            <li>
+              <div class="img">
+                <a href="#">
+                  <img src="http://dl.pinyin.sogou.com/index/2.0/ex/id_1.png" alt="">
+                </a>
+              </div>
+              <div class="info">
+                <a href="http://download.pinyin.sogou.com/skins/download.php?skin_id=524406&f=idxb1&f=indexfirst&_rf=pyindex_dl_1" class="download"></a>
+              </div>
+            </li>
+            <li>
+              <div class="img">
+                <a href="#">
+                  <img src="http://dl.pinyin.sogou.com/index/2.0/ex/id_2.png">
+                </a>
+              </div>
+              <div class="info">
+                <a href="http://download.pinyin.sogou.com/skins/download.php?skin_id=524406&f=idxb1&f=indexfirst&_rf=pyindex_dl_1" class="download"></a>
+              </div>
+            </li>
+            <li>
+              <div class="img">
+                <a href="#">
+                  <img src="http://dl.pinyin.sogou.com/index/2.0/ex/id_3.png">
+                </a>
+              </div>
+              <div class="info">
+                <a href="http://download.pinyin.sogou.com/skins/download.php?skin_id=524406&f=idxb1&f=indexfirst&_rf=pyindex_dl_1" class="download"></a>
+              </div>
+            </li>
+            <li>
+              <div class="img">
+                <a href="#">
+                  <img src="http://dl.pinyin.sogou.com/index/2.0/ex/id_4.png">
+                </a>
+              </div>
+              <div class="info">
+                <a href="http://download.pinyin.sogou.com/skins/download.php?skin_id=524406&f=idxb1&f=indexfirst&_rf=pyindex_dl_1" class="download"></a>
+              </div>
+            </li>
+            <li>
+              <div class="img">
+                <a href="#">
+                  <img src="http://dl.pinyin.sogou.com/index/2.0/ex/id_5.png">
+                </a>
+              </div>
+              <div class="info">
+                <a href="http://download.pinyin.sogou.com/skins/download.php?skin_id=524406&f=idxb1&f=indexfirst&_rf=pyindex_dl_1" class="download"></a>
+              </div>
+            </li>
+            <li>
+              <div class="img">
+                <a href="#">
+                  <img src="http://dl.pinyin.sogou.com/index/2.0/ex/id_6.png">
+                </a>
+              </div>
+              <div class="info">
+                <a href="http://download.pinyin.sogou.com/skins/download.php?skin_id=524406&f=idxb1&f=indexfirst&_rf=pyindex_dl_1" class="download"></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="ciku">
+        <div class="title"></div>
+          <ul class="clearfix">
+                 <li>
+              <div class="img">
+                <a href="#">
+                  <img src="http://dl.pinyin.sogou.com/index/2.0/dict/list_1.png">
+                </a>
+              </div>
+              <div class="info">
+                <a href="http://pinyin.sogou.com/dict/cell.php?id=4&f=idxdict" class="title">网络流行</a>
+              </div>
+            </li>
+                 <li>
+              <div class="img">
+                <a href="#">
+                  <img src="http://dl.pinyin.sogou.com/index/2.0/dict/list_1.png">
+                </a>
+              </div>
+              <div class="info">
+                <a href="http://pinyin.sogou.com/dict/cell.php?id=4&f=idxdict" class="title">网络流行</a>
+              </div>
+            </li>
+                 <li>
+              <div class="img">
+                <a href="#">
+                  <img src="http://dl.pinyin.sogou.com/index/2.0/dict/list_1.png">
+                </a>
+              </div>
+              <div class="info">
+                <a href="http://pinyin.sogou.com/dict/cell.php?id=4&f=idxdict" class="title">网络流行</a>
+              </div>
+            </li>
+                 <li>
+              <div class="img">
+                <a href="#">
+                  <img src="http://dl.pinyin.sogou.com/index/2.0/dict/list_1.png">
+                </a>
+              </div>
+              <div class="info">
+                <a href="http://pinyin.sogou.com/dict/cell.php?id=4&f=idxdict" class="title">网络流行</a>
+              </div>
+            </li>
+                 <li>
+              <div class="img">
+                <a href="#">
+                  <img src="http://dl.pinyin.sogou.com/index/2.0/dict/list_1.png">
+                </a>
+              </div>
+              <div class="info">
+                <a href="http://pinyin.sogou.com/dict/cell.php?id=4&f=idxdict" class="title">网络流行</a>
+              </div>
+            </li>
+                 <li>
+              <div class="img">
+                <a href="#">
+                  <img src="http://dl.pinyin.sogou.com/index/2.0/dict/list_1.png">
+                </a>
+              </div>
+              <div class="info">
+                <a href="http://pinyin.sogou.com/dict/cell.php?id=4&f=idxdict" class="title">网络流行</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+        
+      </body>
+</html>
